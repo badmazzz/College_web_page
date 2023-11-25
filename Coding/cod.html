@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="cod.css">
+  <title>Collaborative Coding</title>
+</head>
+<body>
+
+  <header>
+    <h1>Collaborative Coding Space</h1>
+  </header>
+
+  <main>
+    <section id="codeEditor">
+      <h2>Code Editor</h2>
+      <div id="editor"></div>
+      <div class="container split">
+        <textarea id="htmlCode"  placeholder="Type HTML code here" spellcheck="false" oninput="update(0)" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}if(event.keyCode==8){update(1);}"></textarea>
+        <textarea id="cssCode"  placeholder="Type CSS code here" spellcheck="false" oninput="update(0)" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}if(event.keyCode==8){update(1);}"></textarea>
+        <textarea id="javascriptCode" spellcheck="false" placeholder="Type JavaScript code here" oninput="update(0)" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}if(event.keyCode==8){update(1);}"></textarea>
+    </div>
+    <div class="iframe-container split">
+        <iframe id="viewer"></iframe>
+    </div>
+    </section>
+
+    <section id="chat">
+      <h2>Chat</h2>
+      <ul id="chatMessages"></ul>
+      <input type="text" id="messageInput" placeholder="Type your message">
+      <button onclick="sendMessage()">Send</button>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.js"></script>
+  <script src="cod.js"></script>
+</body>
+</html>
