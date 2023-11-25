@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Resource Booking</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Smart Resource Booking</h1>
+    <form id="bookingForm" action="book_resource.php" method="post">
+      <label for="resource">Select Resource:</label>
+      <select name="resource" id="resource" required>
+        <option value="room1">Room 1</option>
+        <option value="room2">Room 2</option>
+        <option value="room3">Room 3</option>
+        <option value="lab1">Lab1</option>
+        <option value="lab2">Lab 2</option>
+        <option value="audd1">Auditorium 1</option>
+        <option value="audd2">Auditorium 2</option>
+        <!-- Add more resource options as needed -->
+      </select>
+
+      <label for="date">Select Date:</label>
+      <input type="date" name="date" id="date" required>
+
+      <label for="time">Select Time:</label>
+      <input type="time" name="time" id="time" required>
+
+      <button type="submit">Book Resource</button>
+    </form>
+
+    <div id="bookingResult"></div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
