@@ -447,4 +447,13 @@ footer {
     .ctn h1{
         font-size: 24px;
     }
+    .fac-col{
+        margin: 10px 10px;
+    }
+    .fac-row{
+        flex-direction: column;  
+    }   
+    .fac-col:hover{
+        box-shadow: 3px 3px 0.5px 0.5px rgba(0, 0, 0, 0.486);
+    }
 }
